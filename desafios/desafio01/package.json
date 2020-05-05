@@ -1,0 +1,16 @@
+{
+  "name": "desafio-01",
+  "version": "1.0.0",
+  "description": "Desafio para maratona full cycle developer",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "cors": "^2.8.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Diego Clair Rodrigues",
+  "license": "ISC"
+}
