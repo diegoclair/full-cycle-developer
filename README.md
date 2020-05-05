@@ -7,7 +7,7 @@
 FullCycle Developer Marathon 2.0  
   
 In this Marathon, 4 microservices were developed using several of the most used technologies on the market and big companies.  
-We developed a Live plataform where you can stream videos, share the live with other people. You can also interact with chat and other features.  
+We developed a Live plataform where you can stream videos and share the live with other people. You can also interact with chat and other features.  
   
 ### Microservices  
   
