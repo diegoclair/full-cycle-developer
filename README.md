@@ -7,10 +7,11 @@
 FullCycle Developer Marathon 2.0  
   
 In this Marathon, 4 microservices were developed using several of the most used technologies on the market and big companies.  
+We developed a Live plataform where you can stream videos, share the live with other people. You can also interact with chat and other features.  
   
 ### Microservices  
   
 1. microservice-live-manager:  
-Lives manager microservice with Nest.js + Socket.io + Redis + gRPC + PeerServer + React.js  
+Live manager microservice was developed using Nest.js + Socket.io + Redis + gRPC + PeerServer + React.js.  
   
 2.  
