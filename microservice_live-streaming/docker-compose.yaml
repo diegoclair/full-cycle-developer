@@ -4,7 +4,7 @@ services:
 
   app:
     build: .
-    container_name: micro-live-streaming
+    container_name: microservice_live-streaming
     entrypoint: ./.docker/entrypoint.sh
     environment:
       - CHOKIDAR_USEPOLLING=true

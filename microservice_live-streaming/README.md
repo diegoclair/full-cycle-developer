@@ -15,9 +15,9 @@ Microsserviço de transmissão de lives construído com React.js + WebRTC + Sock
 O microsserviço de transmissão de lives necessita que os microsserviços de Live-Manager e Live-Chat já estejam rodando antes de inicia-lo.
 Se você não os tem, acesse-os aqui: 
 
-[Live-Manager](https://github.com/codeedu/maratona-streaming/micro-live-manager)
+[Live-Manager](https://github.com/diegoclair/full-cycle-developer/tree/master/microservice_live-manager)
 
-[Live-Chat](https://github.com/codeedu/maratona-streaming/micro-live-chat)
+[Live-Chat](https://github.com/diegoclair/full-cycle-developer/tree/master/microservice_live-chat)
 
 
 #### Para quem usar Docker Professional no Windows

@@ -1,5 +1,5 @@
 {
-  "name": "micro-live-streaming",
+  "name": "microservice_live-streaming",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
