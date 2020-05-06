@@ -44,7 +44,7 @@ const useStyles = makeStyles(theme => ({
     },
 }));
 
-function App() {
+function App() { //React Hooks
     const classes = useStyles();
 
     return (
@@ -59,7 +59,7 @@ function App() {
                             </Typography>
                         </Toolbar>
                     </AppBar>
-                    <Drawer
+                    <Drawer /* sidebar */
                         classes={{
                             root: classes.drawer,
                             paper: classes.drawer,

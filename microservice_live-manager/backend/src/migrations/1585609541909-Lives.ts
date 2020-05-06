@@ -7,7 +7,7 @@ export class Lives1585609541909 implements MigrationInterface {
             name: 'lives',
             columns: [
                 {
-                    name: 'id',
+                    name: 'id', //uuid
                     type: 'varchar',
                     isPrimary: true
                 },

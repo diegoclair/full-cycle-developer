@@ -25,7 +25,7 @@ const Form = () => {
     const onSubmit = async (values: any) => {
         await axios.post(`${process.env.REACT_APP_MICRO_GENERATOR_URL}/lives`, values);
 
-        history.push('/lives');
+        history.push('/lives'); //send to intial page
     };
 
     return (

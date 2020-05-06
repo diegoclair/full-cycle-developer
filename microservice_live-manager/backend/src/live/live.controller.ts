@@ -3,7 +3,7 @@ import {InjectRepository} from "@nestjs/typeorm";
 import {Repository} from "typeorm";
 import {Live} from "./live.model";
 
-@Controller('lives')
+@Controller('lives') // /lives
 export class LiveController {
 
     constructor(
@@ -22,7 +22,7 @@ export class LiveController {
         })
     }
 
-    @Get(':slug')
+    @Get(':slug')  // /lives/:slug
     async show(@Param('slug') slug) {
         return await this.liveRepo.findOneOrFail({where: {slug}});
     }
