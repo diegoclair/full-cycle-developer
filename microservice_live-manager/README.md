@@ -15,8 +15,8 @@ Microsserviço de administração de lives com Nest.js + Socket.io + Redis + gRP
 Este microsserviço deve ser o primeiro a ser iniciado com o Docker. Depois inicie os microsserviço Live-Chat e Live-Streaming respectivamente.
 Se você não o tem, acesse-os aqui: 
 
-[Live-Chat](https://github.com/codeedu/maratona-streaming/micro-live-chat)
-[Live-Streaming](https://github.com/codeedu/maratona-streaming/micro-live-streaming)
+[Live-Chat](https://github.com/diegoclair/full-cycle-developer/tree/master/microservice_live-chat)
+[Live-Streaming](https://github.com/diegoclair/full-cycle-developer/tree/master/microservice_live-streaming)
 
 #### Para quem usar Docker Professional no Windows
 
