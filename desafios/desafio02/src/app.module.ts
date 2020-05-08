@@ -1,29 +1,13 @@
 import { Module } from '@nestjs/common';
-import { AppController } from './app.controller';
-import { AppService } from './app.service';
-import {ConfigModule} from "@nestjs/config";
-import {MaratonaModule} from './maratona/maratona.module';
-import {Maratona} from "./maratona/maratona.model";
-import {TypeOrmModule} from "@nestjs/typeorm";
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { MaratonaModule } from './maratona/maratona.module';
+import { Maratona } from './maratona/maratona.entity';
 
 @Module({
-  imports: [
-    ConfigModule.forRoot({
-      envFilePath: '.env'
-    }),
-    TypeOrmModule.forRoot({
-      // @ts-ignore
-      type: process.env.TYPEORM_CONNECTION,
-      host: process.env.TYPEORM_HOST,
-      port: parseInt(process.env.TYPEORM_PORT),
-      username: process.env.TYPEORM_USERNAME,
-      password: process.env.TYPEORM_PASSWORD,
-      database: process.env.TYPEORM_DATABASE,
-      entities: [Maratona],
-    }),
-    MaratonaModule
-  ],
-  controllers: [AppController],
-  providers: [AppService],
+  imports: [TypeOrmModule.forRoot({
+    type: 'sqlite',
+    database: 'database.sqlite',
+    entities: [Maratona],
+ }), MaratonaModule],
 })
 export class AppModule {}

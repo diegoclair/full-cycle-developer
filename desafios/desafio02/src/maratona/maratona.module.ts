@@ -1,18 +1,12 @@
 import { Module } from '@nestjs/common';
-import {TypeOrmModule} from "@nestjs/typeorm";
-import {Maratona} from "./maratona.model";
-import {MaratonaController} from "./maratona.controller";
-import {ConfigService} from "@nestjs/config";
+import { MaratonaController } from './maratona.controller';
+import { MaratonaService } from './maratona.service';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Maratona } from './maratona.entity';
 
 @Module({
-    imports: [
-        TypeOrmModule.forFeature([Maratona]),
-    ],
-    controllers: [
-        MaratonaController
-    ],
-    providers: [
-        ConfigService
-    ]
+  imports: [TypeOrmModule.forFeature([Maratona])],
+  controllers: [MaratonaController],
+  providers: [MaratonaService]
 })
 export class MaratonaModule {}

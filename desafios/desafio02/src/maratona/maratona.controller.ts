@@ -1,31 +1,32 @@
-import {Controller, Get, Post, Req, Request} from '@nestjs/common';
-import {InjectRepository} from "@nestjs/typeorm";
-import {Repository} from "typeorm";
-import {Maratona} from "./maratona.model";
+import { Controller, Get, Post, Body, ValidationPipe, Param } from '@nestjs/common';
+import { CreateMaratonaDto } from './create-maratona.dto';
+import { MaratonaService } from './maratona.service';
+import { Maratona } from './maratona.entity';
 
-@Controller('maratona') // /maratona
+@Controller('maratona')
 export class MaratonaController {
-
     constructor(
-        @InjectRepository(Maratona)
-        private readonly maratonaRepo: Repository<Maratona>,
-    ) {
-
-    }
+        private readonly maratonaService: MaratonaService,
+    ) {}
 
     @Get()
-    async index() {
-        return await this.maratonaRepo.find({
-            order: {
-                created_at: 'DESC'
-            }
-        })
+    async findAll() {
+        return this.maratonaService.findAll();
+    }
+
+    @Get(':id')
+    async findById(
+        @Param('id') id: string,
+    ) {
+        return this.maratonaService.findById(id);
     }
 
     @Post()
-    async store(@Req() request: Request) {
-        const maratona = this.maratonaRepo.create(request.body as any);
-        await this.maratonaRepo.save(maratona);
-        return maratona;
+    async create(
+        @Body(ValidationPipe) createMaratonaDto: CreateMaratonaDto,
+    ) {
+        const maratona = new Maratona(createMaratonaDto.aula);
+
+        await this.maratonaService.create(maratona);
     }
 }

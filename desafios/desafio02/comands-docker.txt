@@ -1,0 +1,31 @@
+Using this tutorial ho get some ohters helps: https://www.digitalocean.com/community/tutorials/como-construir-uma-aplicacao-node-js-com-o-docker-pt
+
+Create a image from your dockerfile:
+    docker build -t diegoclair/desafio02 -f .\Dockerfile .
+
+Get id of your image, in this case 'diegoclair/desafio02':
+    docker images
+
+With id, create a tag:
+    docker tag c60483814ba7 diegoclair/desafio02:latest
+
+Push to docker hub:
+    docker push diegoclair/desafio02
+
+
+Now, to test your image from dockerhub:
+Delete all local images:
+    docker system prune -a
+
+Pull from dockerhub:
+    docker pull diegoclair/desafio02
+
+Execute the image:
+    docker run --name pull-desafio02 -p 3000:3000 diegoclair/desafio0
+    --name is like a nick name to your image, you choose
+
+
+Extra: 
+Remove or stop all containers:
+docker stop $(docker ps -a -q)
+docker rm $(docker ps -a -q)
