@@ -1,4 +1,4 @@
-# Desafio 02 da Maratona FullCycle 2.0
+# Desafio 03 da Maratona FullCycle 2.0
 
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo_text.svg" width="320" alt="Nest Logo" /></a>
@@ -28,63 +28,17 @@
 
 # Description
 
-# Desafio 2
+# Desafio 3
 
-## API no Nest.js com TypeORM
-
-Nesse desafio você dará um passo além e criará um endpoint Rest com a listagem de todas aulas da Maratona Full Cycle 2.0 (utilize o menu do site: [maratona.fullcycle.com.br](http://maratona.fullcycle.com.br)).
-
-### Requisitos
-* Nest.js
-* TypeORM
-* Migrations
-* Banco de dados: SQLite
-
-### Detalhes
-
-* Estrutura do banco de dados: Tabela: maratona. Campos: id, aula.
-* Endpoint: "/maratona" com a opção de listar (GET) e inserir (POST)
-* Realize o build da aplicação usando o comando: "npm run build"
-* Gere uma imagem Docker copiando a pasta dist para dento do container incluindo o arquivo do banco do SQLite com as informações populadas
-* Utilize o comando como entrypoint: "npm start:prod"
-* A aplicação deverá rodar na porta 3000
-* Suba o container no DockerHub
-* Poste sua imagem nos comentários do site: [maratona.fullcycle.com.br](http://maratona.fullcycle.com.br)
-* Quando executarmos: "docker run -p 3000:3000 seu-login-docker/nome-da-sua-imagem" deveremos ter acesso a API na porta 3000
-
-### Dicas
-
-* Coloque o arquivo do banco de dados gerado pelo SQLite na raiz do projeto (não esqueça de copiá-lo para dentro do container em conjunto com a pasta dist). Utilize a configuração abaixo no arquivo: "app.module.ts"
-
-```
-TypeOrmModule.forRoot({
-    type: 'sqlite',
-    database: 'database.sqlite',
-    entities: [Maratona],
- })
-``` 
-
-* Para facilitar o processo e rodar o comando do TypeORM no terminal, adicione em scripts no package.json:
-
-```
-"typeorm": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js"
-```
-
-* Para realizar a configuração do banco de dados, crie um arquivo .env na raiz do projeto conforme abaixo:
-
-```
-TYPEORM_CONNECTION=sqlite
-TYPEORM_DATABASE=database.sqlite
-TYPEORM_ENTITIES=src/**/*.entity.ts
-TYPEORM_MIGRATIONS=src/migrations/**/*.ts
-TYPEORM_MIGRATIONS_DIR=src/migrations
-```
-
-* Para criar uma nova migração, execute o comando:
-
-```
-npm run typeorm migration:create -- -n maratona
-```
+## Envio de mensagens usando WebRTC com Peer.js
+* Crie duas rotas no Nest.js. "/sender" e "/receiver".
+* Utilizando o Peer.js, replique o exemplo disponibilizado no repositório: https://github.com/jmcker/Peer-to-Peer-Cue-System
+* Nesse exemplo há um arquivo send.html e receive.html. O conteúdo do send.html terá de ser disponibilizado na rota "/sender" e o do receive.html na rota "/receiver".
+* Acesse o /receiver e copie o ID gerado pelo exemplo
+* Acesse o /sender e cole o ID gerado no receiver no campo ID e clique em connect.
+* A conexão entre os pontos tem que ser estabelecida
+* Realize o build da aplicação, gere uma imagem docker e faça o upload para o DockerHub
+* Quando executarmos: "docker run -p 3000:3000 seu-login-docker/nome-da-sua-imagem" deveremos ter acesso a aplicação na porta 3000.
 
 ## Installation
 
@@ -122,18 +76,18 @@ $ npm run test:cov
 
 Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
 
+
 ### Criando a imagem e realizando deploy para o DockerHub
 ```
-$ docker build -t diegoclair/desafio02 -f .\Dockerfile .
-$ docker push diegoclair/desafio02
+$ docker build -t diegoclair/desafio03 -f .\Dockerfile .
+$ docker push diegoclair/desafio03
 ```
 
 ### Executando o container a partir da imagem do DockerHub
 ```
-$ docker pull diegoclair/desafio02
-$ docker run -p 3000:3000 diegoclair/desafio02
+$ docker pull diegoclair/desafio03
+$ docker run -p 3000:3000 diegoclair/desafio03
 ```
-
 
 ## License
 
