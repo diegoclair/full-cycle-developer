@@ -11,7 +11,7 @@ We developed a Live plataform where you can stream videos and share the live wit
   
 ### Microservices  
   
-1. microservice-live-manager:  
+1. micro-live-manager:  
 Live manager microservice was developed using Nest.js + Socket.io + Redis + gRPC + PeerServer + React.js.  
   
 2.  
