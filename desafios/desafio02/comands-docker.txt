@@ -14,15 +14,15 @@ Push to docker hub:
 
 
 Now, to test your image from dockerhub:
-Delete all local images:
-    docker system prune -a
+    Delete all local images:
+        docker system prune -a --volumes
 
-Pull from dockerhub:
-    docker pull diegoclair/desafio02
+    Pull from dockerhub:
+        docker pull diegoclair/desafio02
 
-Execute the image:
-    docker run --name pull-desafio02 -p 3000:3000 diegoclair/desafio0
-    --name is like a nick name to your image, you choose
+    Execute the image:
+        docker run --name pull-desafio02 -p 3000:3000 diegoclair/desafio0
+        --name is like a nick name to your image, you choose
 
 
 Extra: 
