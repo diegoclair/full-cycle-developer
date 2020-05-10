@@ -1,4 +1,4 @@
-FROM node:10.16.0
+FROM node:10-slim
 
 USER node
 
@@ -13,10 +13,12 @@ WORKDIR /home/node/app
 COPY --chown=node ./package.json .
 
 RUN npm install
-RUN npm run build
 
-COPY . .
+COPY ./views ./views
 
+COPY ./dist ./dist
+
+COPY ./public ./public
 
 EXPOSE 3000
 
