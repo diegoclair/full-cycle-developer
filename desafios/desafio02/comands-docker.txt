@@ -6,16 +6,25 @@ Create a image from your dockerfile:
 Get id of your image, in this case 'diegoclair/desafio02':
     docker images
 
-With id, create a tag:
+With id, you can create a tag (it is not necessary):
     docker tag c60483814ba7 diegoclair/desafio02:latest
 
 Push to docker hub:
     docker push diegoclair/desafio02
 
 
-Now, to test your image from dockerhub:
-    Delete all local images:
-        docker system prune -a --volumes
+Now, to test your image from dockerhub, you need to remove your container and image locally:
+    get container id:
+        dokcer ps
+    remove container:
+        if the container is running in background:
+            docker stop (id)
+        else:
+            docker rm (id)
+    get image id:
+        docker images
+    remove image:
+        docker rmi (id)
 
     Pull from dockerhub:
         docker pull diegoclair/desafio02
@@ -27,5 +36,12 @@ Now, to test your image from dockerhub:
 
 Extra: 
 Remove or stop all containers:
-docker stop $(docker ps -a -q)
-docker rm $(docker ps -a -q)
+    docker stop $(docker ps -a -q)
+    docker rm $(docker ps -a -q)
+
+Delete all local images and containers:
+    docker system prune -a --volumes
+
+--name:
+    quando voce nomeia um container, voce pode parar e iniciar ele pelo nome, funcionará como se fosse o id.
+    
