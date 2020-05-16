@@ -42,6 +42,5 @@ Remove or stop all containers:
 Delete all local images and containers:
     docker system prune -a --volumes
 
---name:
-    quando voce nomeia um container, voce pode parar e iniciar ele pelo nome, funcionará como se fosse o id.
-    
+
+
